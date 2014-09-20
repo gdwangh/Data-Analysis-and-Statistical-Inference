@@ -1,0 +1,13 @@
+---
+title: "one page data set"
+output: html_document
+---
+
+```{r,echo=FALSE}
+setwd("D:/doc/study/Data Analysis and Statistical Inference/Data-Analysis-and-Statistical-Inference/courseproject")
+load("gss.Rdata")
+```
+```{r}
+head(gss[c("caseid","year","age","sex","race","satjob","satfin","finalter")], 55)
+```
+
