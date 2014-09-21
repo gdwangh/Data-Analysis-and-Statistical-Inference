@@ -1,5 +1,5 @@
 ---
-title: "Project Proposal EXPLORATORY DATA ANALYSIS"
+title: "Project Proposal: brief exploratory data analysis"
 output: html_document
 ---
 
@@ -8,10 +8,14 @@ setwd("D:/doc/study/Data Analysis and Statistical Inference/Data-Analysis-and-St
 load("gss.Rdata")
 ```
 ```{r}
-summary(data.frame(gss$race, gss$satjob))
-s<-gss[!is.na(gss$race) & !is.na(gss$satjob),]
-n<-gss[is.na(gss$race) |is.na(gss$satjob),]
-table(s$race, s$satjob)
-plot(s$race, s$satjob, col=c(2,3,4,5),ylab="",xlab="")
-legend("bottom",pch =15, col = c(2,3,4,), legend = c("Very Satisfied","Mod. Satisfied", "A Little Dissat", "Very Dissatisfied"),bg="white")
+summary(data.frame(gss$race, gss$jobfind))
+table(gss$race, gss$jobfind)
+plot(gss$race, gss$jobfind, ylab="",xlab="")
+
+good_gss<-gss[!is.na(gss$jobfind),]
+na_gss<-gss[is.na(gss$jobfind),]
+dim(gss)
+dim(good_gss)
+dim(na_gss)
+table(good_gss$year)
 ```
