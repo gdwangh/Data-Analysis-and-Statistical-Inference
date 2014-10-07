@@ -1,0 +1,95 @@
+RESEARCH QUESTION
+   stu 1. How is tolerance connected to the support of the sex education in school?
+   stu 2. Does the total family income (income06) affect the respondent's view whether a woman should be legally allowed to have an abortion if she can not afford the new child (abpoor)
+
+   stu 3:   Are Self-employed people more satisfied with their financial situation than Hired employees?
+
+  
+DATA - Citation: Include a citation for your data, and if your data set is online, provide a link to the source.
+
+  Stu 1:
+   I am using the General Social Survey (GSS), found on the http://bit.ly/dasi_gss_data . The basic information can be found on https://d396qusza40orc.cloudfront.net/statistics%2Fproject%2Fgss1.html .
+
+Data Citations:
+
+Smith, Tom W., Michael Hout, and Peter V. Marsden. General Social Survey, 1972-2012 [Cumulative File]. ICPSR34802-v1. Storrs, CT: Roper Center for Public Opinion Research, University of Connecticut /Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributors], 2013-09-11. doi:10.3886/ICPSR34802.v1
+
+Persistent URL: http://doi.org/10.3886/ICPSR34802.v1
+
+    Stu 3:
+      Smith, Tom W., Michael Hout, and Peter V. Marsden. General Social Survey, 1972-2012 [Cumulative File]. ICPSR34802-v1. Storrs, CT: Roper Center for Public Opinion Research, University of Connecticut /Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributors], 2013-09-11. doi:10.3886/ICPSR34802.v1
+
+Persistent URL: http://doi.org/10.3886/ICPSR34802.v1
+
+The dataset extract for the DASI course (to be used in this project) can be downloaded as .Rdata object here: http://bit.ly/dasi_gss_data
+
+
+DATA - Collection: Describe how the data were collected.
+  GSS collects data through the face-to-face, about 90 minutes long interviews. 
+
+  Stu 3:
+    The survey was conducted every year from 1972 to 1994 (except in 1979, 1981, and 1992). Since 1994 the GSS is conducted every other year. The data is collected via a combination of computer-assisted personal interviews (CAPI), face-to-face interviews and telephone interviews of adults (18+) in randomly selected households in the USA. To ensure generalizable results full probability sample design is used in combination with a non-responsive sub-sampling technique. The sampling and weighting techniques have evolved over the years. For in-depth discussion of the survey design through the years, please refer to APPENDIX A:
+SAMPLING DESIGN & WEIGHTING: http://publicdata.norc.org:41000/gss/documents//BOOK/GSS_Codebook_AppendixA.pdf
+
+
+DATA - Cases (observational/experimental units): What are the cases? (Remember: case = units of observation or units of experiment)
+    Case is a person, that was responding to the interview. 
+
+   Stu 3:
+     Each case in the dataset is an observational unit, representing an adult (18+) resident of the USA from a randomly selected household.
+
+DATA - Variables: What are the two variables you will be studying? State the type of each variable.
+   stu 1:
+    I will be studing the support of the sex education in school (sexeduc - categorical) and opinion about the sexsual relationship between two adult people (homosex - categorical).
+
+
+   stu2:
+     income06 - total family income of the respondents. Numerical and continuous
+
+      abpoor - whether the respondent think it should be possible for a woman to have an abortion if she can not afford raising the new child. Categorical and ordinal. 
+
+
+    stu 3:
+    The two variables for the project are:
+
+      - WRKSLF: R SELF-EMP OR WORKS FOR SOMEBODY - categorical variable
+      - SATFIN: SATISFACTION WITH FINANCIAL SITUATION - categorical variable
+
+DATA - Type of study: What is the type of study? Is it an observational study or an experiment? Explain how you've arrived at your conclusion using information on the sampling and/or experimental design.
+  Stu 1:
+   It is an observation study. The interview is collecting information about the people and does not make them do anything, but sit in the interview. If it would be experiment, then I would expect them to by made to do something.
+
+  Stu 2:
+    observational study
+
+    a random population was chosen each year. There was no random assigment after the sample group was chosen, which is what defines an expiremental study
+
+   Stu 3:
+    GSS is a sociological survey, in which the data collection process does not directly interfere with how the data arise, thus it can be classified as an observational study. The purpose of the study is to observe demographic characteristics and attitudes of residents of the United States. The observational units in the survey are sampled randomly and subsequently interviewed without any assignment process or experimental design. 
+
+
+DATA - Scope of inference - generalizability: Identify the population of interest, and whether the findings from this analysis can be generalized to that population, or, if not, a subsection of that population. Explain why or why not. Also discuss any potential sources of bias that might prevent generalizability.
+
+  Stu 1:
+   Since the subjects are randomly selected from the population of the US above the age of 18 years old, I believe that it can be generalized to this population as well.
+
+  Stu 2:
+    Population of interest consists of all US citizens. Since the respondents where randomly selected then the findings can be generalized.
+There doesn't seem to be some sort of bias, since all respondents have given an answer regarding the abpoor variable. And even though many did not answer what their total family income is, half of them answered yes on whether a woman should have the right to have an abortion based on her ability to afford the child, and half answered no.
+There should not be a bias under the assumption that the family income of all respondents that refused to give this number is uniformly distributed. 
+
+
+   Stu 3:
+    The population of interest for the GSS includes all residents of the United States. The study is generalizable to the population of interest since it uses full probability sampling and a variety of adjustments to ensure representative results. Potential sources of bias might be non-response bias, oversampling, over-representation of specific subgroups in the society and others. The GSS survey design minimizes potential bias concerns via non-response sub-sampling, weighting techniques and other adjustment methods so for the purpose of this project the GSS results will be considered fully generalizable.
+
+
+DATA - Scope of inference - causality: Can these data be used to establish causal links between the variables of interest? Explain why or why not.
+   Stu 1:
+    Since it is observation data, and not the experiment, there can be no causality, but only correlation.
+
+   Stu 2:
+     no, since this is an observational study, so it can be established that there is a connection between both variables but not that one has caused the outcome of the other
+
+   Stu 3:
+
+No causality can be established between the variables of interest since the GSS is an observational study (survey). It doesn't involve experimental design and assignment process so any association between the variables could be due to one or more confounding variables. Thus causality claims based on the GSS should be considered irrelevant.
