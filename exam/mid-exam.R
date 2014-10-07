@@ -29,7 +29,6 @@ par(mfrow=c(1,2))
 hist(k1,breaks=20,col="red")
 hist(k2,breaks=20,col="blue")
 
-# 从图2观察，以5为轴对称
+# Q11，一个点算1%，p-value是计算<=-5 和 >=5的点的个数。
 
-# Q11，题目大概是求x=5的p-value?，一个点算1%
 
