@@ -13,13 +13,14 @@ k1<-rep(NA,100)
 k2<-rep(NA,100)
 
 for (i in 1:100) {
-  # 一般性抽样，感觉有问题，不知是否对题目说明理解错误
+  # 一般性抽样，感觉有问题，不知是否对题目说明理解错误。 从图形上看，以0为对称
+  # 从答案上看，就是采用一般混合抽样，解释说因为 H0：=0，所以抽样是以0为对称
   s_idx<-sample(1:21,10)
   t<-s[idx %in% s_idx,diff]
   p<-s[!(idx %in% s_idx),diff]
   k1[i]=median(t) -median(p)
   
-  # bootrap方式抽样，感觉这才是正确的
+  # bootrap方式抽样，感觉这才是正确的。-- 答案不是这个
   t2<-sample(x,10, replace=TRUE)
   p2<-sample(y,11, replace=TRUE)
   k2[i]=median(t2) -median(p2)
