@@ -63,3 +63,6 @@ by(nc$mage,nc$mature, min)
 
 # Q9
 load(url("http://d396qusza40orc.cloudfront.net/statistics/lab_resources/gss.RData"))
+plot(gss$class,gss$wordsum)
+
+inference(y = gss$wordsum, x = gss$class, est = "mean", type = "ht",alternative = "greater", method = "theoretical")
