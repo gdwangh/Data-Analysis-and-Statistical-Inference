@@ -105,7 +105,7 @@ The p-value ( =`r pvalue`) is far less than 0.05, so we reject H0 and there is p
 
 From the upper study, we could conclusion that there is relationship between race and job satisfaction rates, and white people's high job satisfaction is not by chance. But because the study was observation and without random assignment, we couldn't conclude that being white is makeing one's job satisfied more. 
 
-The gss data cover years from 1972 to 2012, there is relationship between race and job satisfaction rates on the whole, but whether there was relationship in every year or only some year in some finacal or other environment? In this report, no study was done about these question and I'm interested to them.
+The gss data cover years from 1972 to 2012, there is relationship between race and job satisfaction rates on the whole, but whether there was relationship in every year or only some year in some finacal or other environment? In this report, no study was done about these question and very interesting for me to study futher.
 
 ### References 
 
