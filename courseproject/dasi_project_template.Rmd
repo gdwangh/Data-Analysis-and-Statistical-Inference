@@ -31,13 +31,6 @@ Insert exploratory data analysis here...
 
 Insert inference section here...
 
-Set the hypotheses below：
-
- - **H0: There is no difference between the difference races in finding a job with another employer with approximately the same income and fringe benefits , and any observed differences are due to chance**
- - **Ha: There is some difference between the difference races in finding a job with another employer with approximately the same income and fringe benefits , e.g. perhaps white differ from Black and Others**
-
-Check the condition:
-
 ### Conclusion:
 
 Insert conclusion here...

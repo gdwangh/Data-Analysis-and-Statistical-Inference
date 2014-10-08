@@ -1,0 +1,124 @@
+---
+title: "Is there relationship between race and job satisfaction"
+date: "Oct 8th, 2014"
+output:
+  html_document:
+    theme: cerulean
+---
+
+<!-- For more info on RMarkdown see http://rmarkdown.rstudio.com/ -->
+
+<!-- Enter the code required to load your data in the space below. The data will be loaded but the line of code won't show up in your write up (echo=FALSE) in order to save space-->
+```{r echo=FALSE}
+# setwd("D:/doc/study/Data Analysis and Statistical Inference/Data-Analysis-and-Statistical-Inference/courseproject")
+setwd("D:/workspace/data Analysis and Statistical inference/Data-Analysis-and-Statistical-Inference/courseproject")
+```
+
+<!-- In the remainder of the document, add R code chunks as needed -->
+
+### Introduction:
+
+From GSS data, we can see that the proportion of white people who very satisfied with their jobs is 11% higher than Back people and 8% higher than other race people. Are white people more satisfied with their work than black or other race people? The differ is by chance or because there is relationship between race and job satisfaction rate?
+
+This report is to study whether there is relationship between race and job satisfaction rate.
+
+### Data:
+
+For the study, I use General Social Survey (GSS) data. The data were collected since 1972 by random sampling from adults (18+) in household resident of the United States, half with multi-stage block quota and half with full probability, both of which are random sample methods. Estimates of sampling variability experience suggest that, for most purposes, samples are random and representative. So the cases in gss dataset are adults (18+) in household resident of the United States
+
+I will study vairable "race" and variable "satjob", both of them are categorical, one with 3 levels and anothor with 4 levels. As decribed in code book:
+
+- RACE: WHITE/BLACK/OTHER
+- SATJOB: VERY SATISFIED/ MOD. SATISFIED/A LITTLE DISSAT/VERY DISSATISFIED
+
+The study sample randomly only, not randomly assign subjects to treatments and controls group, and not interfere with thow the data arise, i.e. the Respondent's selection. So, The study is a observational study.Because of observation with random sample, the findings from this analysis can be generalized to all population, adults (18+) in household resident of the United States. And because the study is observation and without random assignment, these data cannot  be used to establish causal links between the variables of interest, i.e. "race" and "satjob".
+
+### Exploratory data analysis:
+
+```{r}
+load("gss.Rdata")
+summary(data.frame(gss$race, gss$satjob))
+```
+There are NA values in variable "satjob" and they should be cleaned.
+```{r}
+cleaned_gss<-na.omit(data.frame(gss$year, gss$race, gss$satjob))
+head(cleaned_gss, 5)
+table(cleaned_gss$gss.year)
+```
+It seems there is no abnormal year. 
+```{r}
+plot(cleaned_gss$gss.race, cleaned_gss$gss.satjob, ylab="",xlab="")
+```
+
+it seems job satisfaction rates of different races are different. White people have higher job satisfaction rate. And it seems there is a relationship between race and job satisfaction.
+
+```{r,out.width=15}
+addmargins(prop.table(table(cleaned_gss$gss.race, cleaned_gss$gss.satjob),1),2)
+```
+
+
+### Inference:
+
+For both variables are categorical variables with 2+ levels, I'll try to use chi-square independence test and set the hypotheses belowï¼?
+
+ - **H0: race and job satisfaction rates are independent. job satisfaction rates do not vary by race**
+ - **Ha: race and job satisfaction rates are dependent. job satisfaction rates do vary by race**
+
+The observed count is below:
+```{r}
+Om<-table(cleaned_gss$gss.race, cleaned_gss$gss.satjob); Om
+```
+Then, calculate the expected counts:
+```{r}
+rn<-nrow(Om)
+cn<-ncol(Om)
+# calculate each row sums
+sm<-addmargins(Om); sm
+# calculate each row propotion: the sum of row / total sum
+p_rowtotal<-prop.table(sm[1:rn, cn+1]); p_rowtotal
+# calculate each column total
+col_total<-sm[rn+1,1:cn]
+# calculate the expected count
+Em<-sapply(col_total, FUN=function(x){ x*p_rowtotal} ); Em
+```
+check the conditions
+
+1. Independence: is met
+  - known from the data collection, the data are random sampled
+  - size of sample is 41277, much less than 10% of population
+  - each case only contributes to one cell in the table
+2. Sample size:  is met
+  - Each cell in the table are bigger than 5, i.e. have at least 5 expected cases
+  
+All conditions are met, and test the hypothesis at the 5% significance level
+
+```{r}
+# X^2
+X_squr<-sum((Om-Em)^2/Em);X_squr
+df<-(rn-1)*(cn-1); df
+# p-value
+pvalue<-pchisq(X_squr, df, lower.tail = FALSE); pvalue
+```
+The p-value ( =`r pvalue`) is far less than 0.05, so we reject H0 and there is provided strong evidence for the alternative hypothesis that race and job satisfaction rates are dependent and job satisfaction rates do vary by race.
+
+### Conclusion:
+
+From the upper study, we could conclusion that there is relationship between race and job satisfaction rates, and white people's high job satisfaction is not by chance. But because the study was observation and without random assignment, we couldn't conclude that being white is makeing one's job satisfied more. 
+
+### References 
+
+#### online data link
+GSS data can be access here:http://bit.ly/dasi_gss_data. For access from China try using the following URL in the code above: http://d396qusza40orc.cloudfront.net/statistics/project/gss.Rdata.
+
+#### data citation
+
+Smith, Tom W., Michael Hout, and Peter V. Marsden. General Social Survey, 1972-2012 [Cumulative File]. ICPSR34802-v1. Storrs, CT: Roper Center for Public Opinion
+
+Research, University of Connecticut /Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributors], 2013-09-11. doi:10.3886/ICPSR34802.v1
+
+Persistent URL: http://doi.org/10.3886/ICPSR34802.v1
+
+### Appendix: 
+```{r}
+head(cleaned_gss, 60)
+```
