@@ -4,8 +4,7 @@ output: html_document
 ---
 
 ```{r,echo=FALSE}
-# setwd("D:/doc/study/Data Analysis and Statistical Inference/Data-Analysis-and-Statistical-Inference/courseproject")
-setwd("D:/workspace/dataScientists/7-Regression Models/coursera-dataScientists-7-Regression-Models/courseproject")
+setwd("D:/doc/study/Data Analysis and Statistical Inference/Data-Analysis-and-Statistical-Inference/courseproject")
 ```
 ```{r}
 load("gss.Rdata")

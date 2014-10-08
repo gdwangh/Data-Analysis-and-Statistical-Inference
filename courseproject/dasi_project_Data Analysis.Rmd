@@ -10,8 +10,8 @@ output:
 
 <!-- Enter the code required to load your data in the space below. The data will be loaded but the line of code won't show up in your write up (echo=FALSE) in order to save space-->
 ```{r echo=FALSE}
-# setwd("D:/doc/study/Data Analysis and Statistical Inference/Data-Analysis-and-Statistical-Inference/courseproject")
-setwd("D:/workspace/data Analysis and Statistical inference/Data-Analysis-and-Statistical-Inference/courseproject")
+setwd("D:/doc/study/Data Analysis and Statistical Inference/Data-Analysis-and-Statistical-Inference/courseproject")
+#setwd("D:/workspace/data Analysis and Statistical inference/Data-Analysis-and-Statistical-Inference/courseproject")
 ```
 
 <!-- In the remainder of the document, add R code chunks as needed -->
@@ -59,7 +59,7 @@ addmargins(prop.table(table(cleaned_gss$gss.race, cleaned_gss$gss.satjob),1),2)
 
 ### Inference:
 
-For both variables are categorical variables with 2+ levels, I'll try to use chi-square independence test and set the hypotheses belowï¼?
+For both variables are categorical variables with 2+ levels, I'll try to use chi-square independence test and set the hypotheses below???
 
  - **H0: race and job satisfaction rates are independent. job satisfaction rates do not vary by race**
  - **Ha: race and job satisfaction rates are dependent. job satisfaction rates do vary by race**
@@ -90,7 +90,7 @@ check the conditions
 2. Sample size:  is met
   - Each cell in the table are bigger than 5, i.e. have at least 5 expected cases
   
-All conditions are met, and test the hypothesis at the 5% significance level
+For all conditions are met, I'll test the hypothesis at the 5% significance level
 
 ```{r}
 # X^2
@@ -104,6 +104,8 @@ The p-value ( =`r pvalue`) is far less than 0.05, so we reject H0 and there is p
 ### Conclusion:
 
 From the upper study, we could conclusion that there is relationship between race and job satisfaction rates, and white people's high job satisfaction is not by chance. But because the study was observation and without random assignment, we couldn't conclude that being white is makeing one's job satisfied more. 
+
+The gss data cover years from 1972 to 2012, there is relationship between race and job satisfaction rates on the whole, but whether there was relationship in every year or only some year in some finacal or other environment? In this report, no study was done about these question and I'm interested to them.
 
 ### References 
 
