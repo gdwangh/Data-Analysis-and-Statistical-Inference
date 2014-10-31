@@ -1,4 +1,3 @@
-setwd()
 load(url("http://www.openintro.org/stat/data/mlb11.RData"))
 
 # 2
