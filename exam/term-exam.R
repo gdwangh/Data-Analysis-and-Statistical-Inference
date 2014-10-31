@@ -90,5 +90,37 @@ R-squared = happiness_level Sum sq / Total Sum sq = 1627 / 195528 = 0.008321059 
   --- x、y反了。
 
 
+# part 2
 
+# 1
+
+# 2
+
+# 3
+HT: sqrt( 0.2 * (1-0.2) / 3226)   # 0.007042515
+CI: sqrt( 0.24 * (1-0.24) / 3226) # 0.007519349
+
+# 5
+46 * 112 / 625  # 8.24
+
+# 10
+P(drug) = 5%
+p(no drug) = 1- 5%=95%
+P(+|nodrug)=3%
+P(-|drug)=7%
+P(+|drug) = 1- P(-|drug) = 1- 7% = 93%
+
+
+P(drug|+) = P(drug & + ) / P(+) 
+          = P(+|drug) * P(drug) /( P(+|drug)*P(drug) + p(+|no drug)*P(nodrug))
+          = (0.93 * 0.05)/(0.93 * 0.05 + 0.03* 0.95)
+          = 0.62
+
+# 14
+R-squared = 1- var(ei)/var(yi) = 0.7467
+ so, var(ei)/var(yi) = 1-0.7467= 0.2533
+
+adjust R-squared = 1-  var(ei)/var(yi) * (n-1)/(n-k-1)
+                 = 1 - 0.2533 * 251 / (251 - 8)
+                 = 0.7383609
 
