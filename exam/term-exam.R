@@ -1,11 +1,11 @@
 # part 1
 
-# 1，right
+# 1，error
 
 # 2， error
 因为这是一个random observation, 不能得出因果关系，所以，不能选3，而应该选1
 
-# 3，right
+# 3，eror
 
 # 4，right
 size=200
@@ -30,11 +30,11 @@ hist(diff,breaks=30,col="red")
 3. 错误，不应该用表中的t-value作为confidence interval中的t*，而应该用df=157-1 下的t值
 4. 0.915 ^ 2 = 0.84
 
-# 6， error
+# 6， right
 p=0.11
 n = 100
 miu <- n*p
-sigma <- n*p*(1-p)
+sigma <- sqrt(n*p*(1-p))
 
 miu + c(-1,1) * 1.96 * sigma
 
@@ -47,7 +47,7 @@ ME <- 1.96 * sigma / sqrt(n)
 1-(1-0.12)^4
 sum(dbinom(1:4,4,0.11))
 
-# 10， right？
+# 10， right
 
 # 11， right
 i: 
@@ -92,9 +92,9 @@ R-squared = happiness_level Sum sq / Total Sum sq = 1627 / 195528 = 0.008321059 
 
 # part 2
 
-# 1
+# 1 right
 
-# 2
+# 2 error
 
 # 3
 HT: sqrt( 0.2 * (1-0.2) / 3226)   # 0.007042515
